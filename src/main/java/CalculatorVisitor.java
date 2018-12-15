@@ -12,13 +12,6 @@ public class CalculatorVisitor extends CalculatorGrammerBaseVisitor<Integer> {
     }
 
     @Override
-    public Integer visitLetExp(CalculatorGrammerParser.LetExpContext ctx) {
-        String var = ctx.VAR().getText();
-        Integer value = visit(ctx.expression(0));
-        return value;
-    }
-
-    @Override
     public Integer visitTerminal(TerminalNode node) {
         return Integer.parseInt(node.getText());
     }
