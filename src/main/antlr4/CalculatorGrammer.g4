@@ -2,9 +2,14 @@ grammar CalculatorGrammer;
 
 prog : expression ;
 
-expression : ADD OB NUMBER COMMA NUMBER CB #addExp ;
+expression : ADD OB expression COMMA expression CB #addExp
+            | LET OB VAR COMMA expression COMMA expression CB #letExp
+            | NUMBER #numExp
+            | VAR #varExp
+            | MULT OB expression COMMA expression CB #multExp
+            | DIV OB expression COMMA expression CB #divExp
+            | SUB OB expression COMMA expression CB #subExp ;
 
-//Lexer Rule
 ADD : 'add' ;
 SUB : 'sub' ;
 DIV : 'div' ;
