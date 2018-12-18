@@ -39,10 +39,17 @@
             <version>1.2.17</version>
         </dependency>
 
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>
-        <plugins>
+       <plugins>
             <plugin>
                 <groupId>org.antlr</groupId>
                 <artifactId>antlr4-maven-plugin</artifactId>
@@ -60,6 +67,6 @@
                     </execution>
                 </executions>
             </plugin>
-        </plugins>
+           </plugins>
     </build>
 </project>
