@@ -18,7 +18,7 @@ And Run java -jar target/Calculator-1.0-SNAPSHOT-jar-with-dependencies.jar <EXPR
 #Package Structure
 
 ### src/main/antlr4 
-####### This folder contains Grammer file ,which describe the parsing rule for input expression.
+####### This folder contains Grammar file ,which describe the parsing rule for input expression.
 
 ###src/main/java
 ####### This folder contains two packages :
