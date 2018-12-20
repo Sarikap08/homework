@@ -10,9 +10,9 @@ import org.apache.log4j.Logger;
 /**
  * This is main class which takes expressions to be evaluated
  */
-public class Calculator {
+public class CalculatorApplication{
 
-    static final Logger LOGGER = Logger.getLogger(Calculator.class);
+    static final Logger LOGGER = Logger.getLogger(CalculatorApplication.class);
     public static void main (String args[]) throws CalculatorException{
         if(args.length == 0 ){
             String errorMessage = "Please provide correct input expression ";
@@ -24,7 +24,7 @@ public class Calculator {
         LOGGER.debug("Expression to be evaluated: "+ expression);
         try {
             Integer result = evaluateExpression(expression);
-            LOGGER.info("Expression Evaluated Successfully And Result Is -->" + result);
+            LOGGER.info("Expression Evaluated Successfully And Result is " + result);
         } catch (RecognitionException e) {
             LOGGER.error("Error while parsing the expression ");
         }catch (NullPointerException ex) {
