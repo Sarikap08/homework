@@ -6,6 +6,7 @@
         <artifactId>Calculator</artifactId>
         <groupId>com.synopsys.testwork</groupId>
         <version>1.0-SNAPSHOT</version>
+        <packaging>jar</packaging>
         <url>http://maven.apache.org</url>
 
         <modelVersion>4.0.0</modelVersion>
@@ -25,6 +26,7 @@
             <groupId>org.antlr</groupId>
             <artifactId>antlr4-runtime</artifactId>
             <version>${antlr4.version}</version>
+           <!-- <optional>true</optional>-->
         </dependency>
 
         <dependency>
@@ -67,6 +69,29 @@
                     </execution>
                 </executions>
             </plugin>
-           </plugins>
-    </build>
+           <plugin>
+               <artifactId>maven-assembly-plugin</artifactId>
+               <executions>
+                   <execution>
+                       <phase>package</phase>
+                       <goals>
+                           <goal>single</goal>
+                       </goals>
+                   </execution>
+               </executions>
+               <configuration>
+                   <archive>
+                       <manifest>
+                           <addClasspath>true</addClasspath>
+                           <mainClass>com.synopsys.calculator.Calculator</mainClass>
+                       </manifest>
+                   </archive>
+                   <descriptorRefs>
+                       <descriptorRef>jar-with-dependencies</descriptorRef>
+                   </descriptorRefs>
+               </configuration>
+           </plugin>
+               </plugins>
+
+         </build>
 </project>

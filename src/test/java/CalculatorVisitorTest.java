@@ -1,4 +1,5 @@
 import com.synopsys.calculator.Calculator;
+import org.antlr.v4.runtime.misc.ParseCancellationException;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -77,4 +78,10 @@ public class CalculatorVisitorTest {
         Assert.assertEquals(-7, calculatedValue);
     }
 
+    @Test(expected = ParseCancellationException.class )
+    public void testExpression(){
+        String zeroValueExpression = "div(-20,";
+        int calculatedValue = Calculator.evaluateExpression(zeroValueExpression);
+        Assert.assertEquals(null, calculatedValue);
+    }
 }
